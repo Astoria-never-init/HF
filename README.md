@@ -1,2 +1,2 @@
 # HF
-This project exists for check myself scope. Anyway it's project maybe will be died
+This project's purpose is to check my skills. Anyway i don't guarantee that it wouldn't be forgotten in the near future.
