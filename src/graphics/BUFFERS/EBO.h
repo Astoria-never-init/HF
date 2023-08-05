@@ -10,7 +10,7 @@ public:
 	~EBO();
 
 	void init(std::vector<unsigned int>& indices);
-	void init(void * data, size_t size);
+	void init(void * data, unsigned int size);
 
 	void Bind() override;
 	void Unbind() override;

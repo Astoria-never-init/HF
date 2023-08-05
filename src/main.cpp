@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void main()
+int main()
 {
 	unsigned int X = 1240, Y = 920;
 
@@ -17,7 +17,7 @@ void main()
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
-		return;
+		return -1;
 	}
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(2);
@@ -38,4 +38,6 @@ void main()
 
 	glfwDestroyWindow(window);
 	glfwTerminate();
+
+    return 0;
 }
