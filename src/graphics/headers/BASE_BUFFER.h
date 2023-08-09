@@ -8,6 +8,7 @@ public:
 	virtual void Unbind() = 0;
 	virtual void Delete() = 0;
 
+	unsigned int getID();
 protected:
 	unsigned int ID;
 };

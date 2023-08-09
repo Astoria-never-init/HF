@@ -1,4 +1,4 @@
-#include "FBO.h"
+#include "headers/FBO.h"
 #include <glad/glad.h>
 
 FBO::~FBO()

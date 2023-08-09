@@ -1,4 +1,4 @@
-#include"EBO.h"
+#include "headers/EBO.h"
 #include <glad/glad.h>
 
 void EBO::init(std::vector<unsigned int>& indices)

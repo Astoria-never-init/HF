@@ -1,4 +1,4 @@
-#include"VBO.h"
+#include "headers/VBO.h"
 #include <glad/glad.h>
 
 void VBO::init(std::vector<float>& weights)
