@@ -1,4 +1,4 @@
-#include "headers/RBO.h"
+#include "RBO.h"
 #include<glad/glad.h>
 
 RBO::~RBO()

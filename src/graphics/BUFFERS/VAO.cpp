@@ -1,4 +1,4 @@
-#include "headers/VAO.h"
+#include "VAO.h"
 
 
 void VAO::init()

@@ -1,4 +1,4 @@
-#include "headers/SHADER.h"
+#include "SHADER.h"
 #include <glm/gtc/type_ptr.hpp>
 
 bool Shader::AddShader(const char* _source_code, int _type, std::string* _log)
@@ -95,7 +95,7 @@ void Shader::setTexture2D(const std::string name, GLuint texture)
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
 
-	glGetUniformLocation(ID, name.c_str());
+	getLocation(name);
 	glUniform1f(texture, 0);
 }
 
@@ -122,3 +122,4 @@ void Shader::setVec2(const std::string name, glm::vec2 vec2)
 	Activate();
 	glUniform2f(getLocation(name), vec2.x, vec2.y);
 }
+

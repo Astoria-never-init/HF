@@ -1,5 +1,5 @@
-#ifndef FBO_CLASS_H
-#define FBO_CLASS_H
+#ifndef RENDER_FBO_CLASS_H
+#define RENDER_FBO_CLASS_H
 
 #include "BASE_BUFFER.h"
 

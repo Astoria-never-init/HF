@@ -1,5 +1,5 @@
-#ifndef BUFFER_CLASS_H
-#define BUFFER_CLASS_H
+#ifndef RENDER_BUFFER_CLASS_H
+#define RENDER_BUFFER_CLASS_H
 
 class BUFFER
 {

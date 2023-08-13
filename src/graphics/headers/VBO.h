@@ -1,5 +1,5 @@
-#ifndef VBO_CLASS_H
-#define VBO_CLASS_H
+#ifndef RENDER_VBO_CLASS_H
+#define RENDER_VBO_CLASS_H
 
 #include "BASE_BUFFER.h"
 #include <vector>

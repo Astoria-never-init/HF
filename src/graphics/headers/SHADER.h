@@ -1,5 +1,5 @@
-#ifndef SHADER_CLASS_H
-#define SHADER_CLASS_H
+#ifndef RENDER_SHADER_CLASS_H
+#define RENDER_SHADER_CLASS_H
 
 #include <glad/glad.h>
 #include <string>

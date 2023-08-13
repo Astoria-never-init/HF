@@ -1,5 +1,5 @@
-#ifndef RBO_CLASS_H
-#define RBO_CLASS_H
+#ifndef RENDER_RBO_CLASS_H
+#define RENDER_RBO_CLASS_H
 
 #include "BASE_BUFFER.h"
 

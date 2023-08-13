@@ -1,5 +1,5 @@
-#ifndef VAO_CLASS_H
-#define VAO_CLASS_H
+#ifndef RENDER_VAO_CLASS_H
+#define RENDER_VAO_CLASS_H
 
 #include "VBO.h"
 #include "BASE_BUFFER.h"

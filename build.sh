@@ -3,6 +3,7 @@
 Build_Dir="build"
 
 GLFW_Lib="libs/_lin/glfw/lib-64"
+ 
 
 
 
@@ -19,10 +20,17 @@ fi
 if ! [ -d "$Build_Dir" ]; then
     echo "Create build directory..."
     mkdir "$Build_Dir"
-fi
+fi 
 
-cd $Build_Dir
+cd "$PWD/$Build_Dir"
 cmake ..
+make
+
+cd ..
+
+cp -rn "$PWD/res" "$PWD/$Build_Dir"
+
+./$Build_Dir/debug
 
 read
 
