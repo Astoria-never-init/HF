@@ -65,20 +65,29 @@ ${LIBRARY_DIR}/include/glad/include)
 
 
 #add objects lib
-file(GLOB STRAPPING_HEADERS ${CMAKE_SOURCE_DIR}/src/strapping/headers/*.h)
-source_group("headers" FILES ${STRAPPING_HEADERS})
+file(GLOB API_HEADERS ${CMAKE_SOURCE_DIR}/src/api/headers/*.h)
+source_group("headers" FILES ${API_HEADERS})
 
-file(GLOB STRAPPING_CAMERA ${CMAKE_SOURCE_DIR}/src/strapping/CAMERA/*.cpp)
-source_group("CAMERA" FILES ${STRAPPING_CAMERA})
+file(GLOB API_CAMERA ${CMAKE_SOURCE_DIR}/src/api/CAMERA/*.cpp)
+source_group("CAMERA" FILES ${API_CAMERA})
 
+file(GLOB API_STATIC_MESH ${CMAKE_SOURCE_DIR}/src/api/STATIC_MESH/*.cpp)
+source_group("STATIC_MESH" FILES ${API_STATIC_MESH})
 
-add_library(strapping STATIC ${STRAPPING_HEADERS} ${STRAPPING_CAMERA} )
+file(GLOB API_RENDER_SECTION ${CMAKE_SOURCE_DIR}/src/api/RENDER_SECTION/*.cpp)
+source_group("RENDER_SECTION" FILES ${API_RENDER_SECTION})
 
-target_include_directories(strapping PRIVATE 
+file(GLOB API_SCENE_CULLING ${CMAKE_SOURCE_DIR}/src/api/SCENE_CULLING/*.cpp)
+source_group("SCENE_CULLING" FILES ${API_SCENE_CULLING})
+
+add_library(api STATIC ${API_HEADERS} ${API_CAMERA} ${API_STATIC_MESH} ${API_RENDER_SECTION} ${API_SCENE_CULLING})
+
+target_include_directories(api PRIVATE 
 ${CMAKE_SOURCE_DIR}/src/graphics/headers 
-${CMAKE_SOURCE_DIR}/src/strapping/headers
+${CMAKE_SOURCE_DIR}/src/api/headers
+${LIBRARY_DIR}/include/glad/include
 )
-target_link_libraries(strapping PRIVATE render)
+target_link_libraries(api PRIVATE render)
 
 
 
@@ -92,7 +101,7 @@ add_executable(debug ${CMAKE_SOURCE_DIR}/src/main.cpp ${GLAD} ${STB_IMAGE})
 
 target_include_directories(debug PRIVATE 
 ${CMAKE_SOURCE_DIR}/src/graphics/headers 
-${CMAKE_SOURCE_DIR}/src/strapping/headers
+${CMAKE_SOURCE_DIR}/src/api/headers
 ${LIBRARY_DIR}/include/glad/include
 ${LIBRARY_DIR}/include/glfw/include
 )
@@ -101,7 +110,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     target_link_libraries(debug PRIVATE render dl Threads::Threads libglfw3.a)
     #target_link_libraries(debug PRIVATE render)
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
-    target_link_libraries(debug PRIVATE render strapping glfw3)
+    target_link_libraries(debug PRIVATE render api glfw3)
 endif()
 
 
